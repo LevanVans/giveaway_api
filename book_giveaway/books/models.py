@@ -32,9 +32,9 @@ class Condition(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(Author, related_name="book_author", on_delete=models.CASCADE)
-    location = models.ForeignKey(Location,  on_delete=models.CASCADE)
-    genre = models.ForeignKey(Genre,  on_delete=models.CASCADE)
-    condition = models.ForeignKey(Condition, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, related_name="book_location", on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, related_name="book_genre", on_delete=models.CASCADE)
+    condition = models.ForeignKey(Condition, related_name="book_condition", on_delete=models.CASCADE)
     
     def __str__(self) -> str:
         return self.title

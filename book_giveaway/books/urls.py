@@ -5,9 +5,9 @@ from .views import *
 router = routers.DefaultRouter()
 
 
-router.register(r'genre', GenreViewSet)
-router.register(r"author", AuthorViewSet)
-router.register(r"location", LocationViewSet)
+router.register(r'genre', GenreViewSet, basename="genre")
+router.register(r"author", AuthorViewSet, basename="author")
+router.register(r"location", LocationViewSet, basename="location")
 
 
 
